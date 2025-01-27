@@ -5,14 +5,12 @@
  * 난이도 : 하 (구현이 복잡해서 그렇지 아이디어 자체는 쉽게 떠올릴 수 있었습니다.)
  */
 
-package Algorithm;
-
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.StringTokenizer;
 
-public class Main_2578_빙고 {
+public class Main {
     static int SIZE = 5;    // 빙고판 가로 세로 길이
     static int[][] board = new int[SIZE][SIZE];     // 빙고 보드판
     static int[] call = new int[SIZE * SIZE];      // 사회자 부르는 숫자
