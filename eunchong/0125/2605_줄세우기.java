@@ -1,5 +1,3 @@
-package Algorithm;
-
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
@@ -15,7 +13,7 @@ import java.util.StringTokenizer;
  * 난이도 : 상 (어떻게 구현해야 할지 떠올리는게 쉽지 않은거 같습니다. 문제 난이도가 잘못된 거 같습니다. 앞에서 푼 실버 문제가 더 쉬운거 같습니다.)
  */
 
-public class Main_2605_줄세우기 {
+public class Main {
     // 학생 번호 전체를 왼쪽으로 밀기 위한 함수
     static void pushLeft(int [] arr, int index) {
         // 밀어야 할 값의 시작 지점
