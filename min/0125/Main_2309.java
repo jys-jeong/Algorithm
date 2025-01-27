@@ -15,7 +15,6 @@ public class Main {
 		Arrays.sort(height);
 		dfs(0, 0);
 		
-		sc.close();
 	}
 	
 	static void dfs(int index, int depth) {
