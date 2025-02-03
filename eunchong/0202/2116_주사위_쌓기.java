@@ -55,19 +55,22 @@ public class Main {
             }
         }
 
-
+        // 1번 주사위는 마음대로 놓을 수 있기 때문에 6면을 돌려가며 모든 경우의 수를 계산
         for (int i = 0; i < 6; i++) {
             int sum = 0;    // 주사위 옆면의 합
+
+            // 1번 주사위 윗면 아래면을 결정해서 최대 옆면의 값을 구해 sum에 더함
             int top = dice[0][i];   // 주사위 윗면
             int bottom = dice[0][getOppositeFace(i)];   // 주사위 아래면
             sum += getMaxSide(0, top, bottom);   // 첫번째 주사위의 최대 옆면의 값을 더함
 
-            // 두번째 주사위 부터 최대 옆면의 값을 더함
+            // 두번째 주사위 부터 차근 차근 쌓으면서 최대 옆면의 값을 더함
             for (int j = 1; j < N; j++) {
+                // 주사위를 쌓기 위해 반복문을 돌며
                 for (int k = 0; k < 6; k++) {
-                    if (dice[j][k] == top) {    // 이전 주사위 위면을 찾아서
-                        bottom = top;   // 이번 주사위 아래면을 세팅하고
-                        top = dice[j][getOppositeFace(k)];  // 위면도 세팅
+                    if (dice[j][k] == top) {    // 이전 주사위 위면을 찾음
+                        bottom = top;   // 이전 주사위 윗면으로 이번 주사위 아래면을 세팅하고
+                        top = dice[j][getOppositeFace(k)];  // 윗면도 세팅
 
                         sum += getMaxSide(j, top, bottom);  // 옆면 중 최대 값을 찾아 주사위 옆면의 합에 더함
                         break;
@@ -75,7 +78,7 @@ public class Main {
                 }
             }
 
-            // 주사위를 쌓는 모든 경우의 수를 계산해서 최대 옆면의 합을 구함
+            // 1번 주사위를 어떻게 쌓았는지를 기준으로 다른 주사위들을 쌓았을 때 옆면의 합의 최대값을 구해 최종 최대값을 계산
             maxSum = Math.max(maxSum, sum);
         }
 
